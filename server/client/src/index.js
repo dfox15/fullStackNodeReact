@@ -7,6 +7,8 @@ import reduxThunk from 'redux-thunk'
 
 import App from './components/App'
 import reducers from './reducers'
+
+// Development only axios helpers
 import axios from 'axios'
 window.axios = axios
 
@@ -19,5 +21,6 @@ ReactDOM.render(
     document.querySelector('#root')
 )
 
+// Development only Stripe helpers
 console.log('STRIPE KEY IS', process.env.REACT_APP_STRIPE_KEY)
 console.log('Environment is', process.env.NODE_ENV)
