@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import SurveyField from './SurveyField'
 
 const FIELDS = [
-    { label: 'Survey Title', name: ' title' },
+    { label: 'Survey Title', name: 'title' },
     { label: 'Subject Line', name: 'subject' },
     { label: 'Email Body', name: 'body' },
     { label: 'Recipeint List', name: 'emails' }
@@ -36,6 +36,17 @@ class SurveyForm extends Component {
     }
 }
 
+function validate(values) {
+    const errors = {}
+
+    if (!values.title) {
+        errors.title = 'You must provide a title'
+    }
+
+    return errors
+}
+
 export default reduxForm({
+    validate,
     form: 'surveyForm'
 })(SurveyForm)
