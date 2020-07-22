@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import formFields from './formFields'
 import * as actions from '../../actions'
 
-const SurveyFormReview = ({ onCancel, formValues }) => {
+const SurveyFormReview = ({ onCancel, formValues, submitSurvey }) => {
     const reviewFields = _.map(formFields, ({ name, label }) => {
         return (
             <div key={name}>
