@@ -27,6 +27,11 @@ module.exports = (app) => {
                     choice: match.choice
                 }
             }
+
+            const compactEvents = _.compact(events)
+            const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId')
+
+            console.log(uniqueEvents)
         })
 
         console.log(events)
