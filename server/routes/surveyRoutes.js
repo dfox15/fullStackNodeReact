@@ -32,6 +32,7 @@ module.exports = (app) => {
             const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId')
 
             console.log(uniqueEvents)
+            res.send({})
         })
 
         console.log(events)
